@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>vehiculo</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form #f="ngForm" (ngSubmit)="guardarVehiculo(f)">
+        <ion-item>
+            <ion-label>Marca</ion-label>
+            <ion-select *ngIf="!marcaC" ngModel name="marca" placeholder="Seleccione">
+                <ion-select-option [value]="auto" *ngFor="let auto of autos">{{auto}}</ion-select-option>
+            </ion-select>
+            <ion-input *ngIf="marcaC" placeholder="Ingrese Marca" ngModel name="marca"></ion-input>
+            <ion-label>Otro </ion-label>
+            <ion-checkbox [(ngModel)]="marcaC" name="marcaC" checked="false"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Placa</ion-label>
+            <ion-input ngModel name="placa"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Modelo</ion-label>
+            <ion-input ngModel name="modelo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Tipo</ion-label>
+            <ion-select ngModel name="tipo" placeholder="Seleccione">
+                <ion-select-option value="Sedan">Sedan</ion-select-option>
+                <ion-select-option value="Cupe">Cupe</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Refrigerante</ion-label>
+            <ion-select *ngIf="!refrigeranteC" ngModel name="refrigerante" placeholder="Seleccione">
+                <ion-select-option value="R12">R12</ion-select-option>
+                <ion-select-option value="R134">R134 a</ion-select-option>
+                <ion-select-option value="R134">R1234 yF</ion-select-option>
+            </ion-select>
+            <ion-input *ngIf="refrigeranteC" placeholder="Ingrese Refrigerante" ngModel name="refrigerante"></ion-input>
+            <ion-label>Otro </ion-label>
+            <ion-checkbox [(ngModel)]="refrigeranteC" name="refrigeranteC" checked="false"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Lubricante</ion-label>
+            <ion-select *ngIf="!lubricanteC" ngModel name="lubricante" placeholder="Seleccione">
+                <ion-select-option value="Mineral (Mo)">Mineral (Mo)</ion-select-option>
+                <ion-select-option value="Alquilbenceno (AB)"> Alquilbenceno (AB)</ion-select-option>
+                <ion-select-option value="Polidester (POE)">Polidester (POE) </ion-select-option>
+                <ion-select-option value="PoliAlfaoelfino(PAO)">PoliAlfaoelfino(PAO) </ion-select-option>
+                <ion-select-option value="Polialquilglicol (PAG)"> Polialquilglicol (PAG)</ion-select-option>
+
+            </ion-select>
+            <ion-input *ngIf="lubricanteC" placeholder="Ingrese lubricante" ngModel name="lubricante"></ion-input>
+            <ion-label>Otro </ion-label>
+            <ion-checkbox [(ngModel)]="lubricanteC" name="lubricanteC" checked="false"></ion-checkbox>
+        </ion-item>
+        <br>
+        <br>
+        <br>
+        <ion-button expand="full" type="submit">Guardar</ion-button>
+
+    </form>
+    <ion-button expand="full" (click)="inicio()">Inicio</ion-button>
+</ion-content>

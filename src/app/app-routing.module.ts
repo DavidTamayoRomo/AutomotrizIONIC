@@ -14,6 +14,26 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+  },
+  {
+    path: 'vehiculo',
+    loadChildren: () => import('./vehiculo/vehiculo.module').then( m => m.VehiculoPageModule)
+  },
+  {
+    path: 'procesos',
+    loadChildren: () => import('./procesos/procesos.module').then( m => m.ProcesosPageModule)
+  },
+  {
+    path: 'carga',
+    loadChildren: () => import('./carga/carga.module').then( m => m.CargaPageModule)
+  },
+  {
+    path: 'descarga',
+    loadChildren: () => import('./descarga/descarga.module').then( m => m.DescargaPageModule)
+  },
+  {
+    path: 'vacio',
+    loadChildren: () => import('./vacio/vacio.module').then( m => m.VacioPageModule)
   }
 ];
 
