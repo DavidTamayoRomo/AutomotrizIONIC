@@ -1,9 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>descarga</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Descarga</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <form #f="ngForm" (ngSubmit)="guardarDescarga(f)">
+        <br>
+        <br>
+        <ion-item>
+            <ion-label position="floating">Tiempo de descarga (min)</ion-label>
+            <ion-input ngModel name="tiempo"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Cant. de lubricante Extraido (ml)</ion-label>
+            <ion-input ngModel name="lubricante"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Cant. de refrigerante Extraido (gr)</ion-label>
+            <ion-input ngModel name="refrigerante"></ion-input>
 
+        </ion-item>
+
+
+        <br>
+        <br>
+        <ion-button expand="full" type="submit">Guardar</ion-button>
+
+
+    </form>
 </ion-content>

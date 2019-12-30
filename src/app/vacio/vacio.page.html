@@ -1,9 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>vacio</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Prueba de vacio</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <form #f="ngForm" (ngSubmit)="guardarVacio(f)">
+        <br>
+        <br>
+        <ion-item>
+            <ion-label position="floating">Tiempo de vaciado (min)</ion-label>
+            <ion-input ngModel name="tiempo"></ion-input>
+        </ion-item>
 
+        <ion-item>
+            <ion-label>Avería en el Sistema?</ion-label>
+            <ion-select ngModel name="averia" placeholder="Seleccione">
+                <ion-select-option value="SI">SI</ion-select-option>
+                <ion-select-option value="NO"> NO</ion-select-option>
+            </ion-select>
+
+        </ion-item>
+
+
+        <br>
+        <br>
+        <ion-button expand="full" type="submit">Guardar</ion-button>
+
+
+    </form>
 </ion-content>

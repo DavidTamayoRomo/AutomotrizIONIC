@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Vehiculo } from '../models/vehiculo.model';
 import { NgForm } from '@angular/forms';
 import { NavController } from '@ionic/angular';
+//import swal from 'sweetalert';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-vehiculo',
@@ -105,7 +107,17 @@ export class VehiculoPage implements OnInit {
   guardarVehiculo(forma:NgForm){
     this.vehiculo=forma.value
     localStorage.setItem("vehiculo",JSON.stringify(this.vehiculo))
+    //swal('Correcto','Vehiculo creado','success')
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Vehiculo creado correctamente',
+      showConfirmButton: false,
+      timer: 1500
+    })
     this.navCtrl.navigateRoot('/procesos');
+
+
   }
 
   inicio(){

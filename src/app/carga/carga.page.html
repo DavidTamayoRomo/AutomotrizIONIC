@@ -1,9 +1,37 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>carga</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Carga</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-card>
+        <ion-card-content>
+            <p> Refrigerante: {{vehiculo.refrigerante}}</p>
+            <p> Lubricante: {{vehiculo.lubricante}}</p>
+        </ion-card-content>
+    </ion-card>
+
+
+    <form #f="ngForm" (ngSubmit)="guardarCarga(f)">
+        <ion-item>
+            <ion-label position="floating">Gas Insertado (gramos)</ion-label>
+            <ion-input ngModel name="gas"></ion-input>
+
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Cant. de lubricante insertado (ml)</ion-label>
+            <ion-input ngModel name="lubricante"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Tiempo de carga (min)</ion-label>
+            <ion-input ngModel name="tiempo"></ion-input>
+        </ion-item>
+        <br>
+        <br>
+        <ion-button expand="full" type="submit">Guardar</ion-button>
+
+
+    </form>
 
 </ion-content>
