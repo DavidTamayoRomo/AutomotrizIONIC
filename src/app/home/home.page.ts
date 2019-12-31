@@ -21,7 +21,7 @@ export class HomePage {
   }
   
   iniciar(){
-    console.log("Inicie");
+    localStorage.clear();
     this.navCtrl.navigateRoot('/vehiculo');
   }
 

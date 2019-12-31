@@ -1,5 +1,9 @@
 <ion-header>
     <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/procesos"></ion-back-button>
+        </ion-buttons>
+
         <ion-title>Prueba de vacio</ion-title>
     </ion-toolbar>
 </ion-header>
@@ -10,7 +14,7 @@
         <br>
         <ion-item>
             <ion-label position="floating">Tiempo de vaciado (min)</ion-label>
-            <ion-input ngModel name="tiempo"></ion-input>
+            <ion-input ngModel name="tiempo" type="number"></ion-input>
         </ion-item>
 
         <ion-item>

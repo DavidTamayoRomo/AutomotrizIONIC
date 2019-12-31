@@ -1,5 +1,9 @@
 <ion-header>
     <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/procesos"></ion-back-button>
+        </ion-buttons>
+
         <ion-title>Carga</ion-title>
     </ion-toolbar>
 </ion-header>
@@ -16,16 +20,16 @@
     <form #f="ngForm" (ngSubmit)="guardarCarga(f)">
         <ion-item>
             <ion-label position="floating">Gas Insertado (gramos)</ion-label>
-            <ion-input ngModel name="gas"></ion-input>
+            <ion-input ngModel name="gas" type="number"></ion-input>
 
         </ion-item>
         <ion-item>
             <ion-label position="floating">Cant. de lubricante insertado (ml)</ion-label>
-            <ion-input ngModel name="lubricante"></ion-input>
+            <ion-input ngModel name="lubricante" type="number"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label position="floating">Tiempo de carga (min)</ion-label>
-            <ion-input ngModel name="tiempo"></ion-input>
+            <ion-input ngModel name="tiempo" type="number"></ion-input>
         </ion-item>
         <br>
         <br>
