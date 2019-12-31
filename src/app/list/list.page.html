@@ -1,27 +1,72 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      List
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Reporte
+        </ion-title>
+        <ion-buttons slot="primary">
+            <ion-button color="primary" (click)="createPdf()">
+                <ion-icon slot="icon-only" name="print"></ion-icon>
+            </ion-button>
+            <ion-button color="primary" (click)="savePdf()">
+                <ion-icon slot="icon-only" name="save"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
+    <div class="printable-content">
+        <div class="printable-area" id="printable-area">
+            <ion-card>
+                <ion-card-content>
+                    <p> Fecha y hora: {{hora}}</p>
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card>
+                <ion-card-content>
+
+                    <h3 align="center">Datos Vehiculo</h3>
+                    <p> Marca: {{vehiculo.marca}}</p>
+                    <p> Placa: {{vehiculo.placa}}</p>
+                    <p> Modelo: {{vehiculo.modelo}}</p>
+                    <p> Tipo Vehiculo: {{vehiculo.tipo}}</p>
+                    <p> Lubricante: {{vehiculo.lubricante}}</p>
+                    <p> Refrigerante: {{vehiculo.refrigerante}}</p>
+
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card>
+                <ion-card-content>
+                    <h3 align="center">Datos de Carga</h3>
+                    <p>Cantidad de gas insertado : {{carga.gas}} gramos</p>
+                    <p>Cantidad de lubricante insertado : {{carga.lubricante}} ml</p>
+                    <p>Tiempo de carga : {{carga.tiempo}} min</p>
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card>
+                <ion-card-content>
+                    <h3 align="center">Datos de Descarga</h3>
+                    <p>Cantidad de gas refrigerante : {{descarga.refrigerante}} gramos</p>
+                    <p>Cantidad de lubricante extraido : {{descarga.lubricante}} ml</p>
+                    <p>Tiempo de descarga : {{descarga.tiempo}} min</p>
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card>
+                <ion-card-content>
+                    <h3 align="center">Prueba de vacio</h3>
+                    <p>Tiempo de vaciado : {{vacio.tiempo}} min</p>
+                    <p>Existe avería : {{vacio.averia}} </p>
+                </ion-card-content>
+            </ion-card>
+
+
+        </div>
     </div>
-  -->
 </ion-content>

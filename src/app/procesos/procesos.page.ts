@@ -28,6 +28,10 @@ export class ProcesosPage implements OnInit {
   vacio(){
     this.navCtrl.navigateRoot('/vacio');
   }
+
+  reporte(){
+    this.navCtrl.navigateRoot('/list');
+  }
   
 
 }
